@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import hrms.northwind.business.abstracts.JobSeekerVerificationService;
+import hrms.northwind.core.utilities.results.DataResult;
 import hrms.northwind.entities.concretes.JobSeekerVerification;
 
 @RestController
@@ -20,7 +21,7 @@ public class JobSeekerVerificationController {
 	}
 	
 	@GetMapping("/getall")
-	public List<JobSeekerVerification> getAll(){
+	public DataResult<List<JobSeekerVerification>> getAll(){
 		return this.jobSeekerVerificationService.getAll();
 	}
 	
