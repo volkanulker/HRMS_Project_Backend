@@ -6,11 +6,18 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="Job_Advertisements")
+@Table(name="job_advertisements")
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class JobAdvertisement{
 	@Id
@@ -27,27 +34,26 @@ public class JobAdvertisement{
 	private String advertisementTitle;
 	@Column(name="job_id")
 	private int jobId;
-	@Column(name="city_id")
-	private int cityId;
+//	@Column(name="city_id")
+//	private int cityId;
 	@Column(name="job_description")
 	private String jobDescription;
 	
-	public JobAdvertisement() {
-		
-	}
+	@Column(name="needed_employee_number")
+	private int neededEmployeeNumber;
 	
-	public JobAdvertisement(int advertisementId, int employerId, Date creationDate, Date lastApplicationDate,
-			String advertisementTitle, int jobId, int cityId, String jobDescription) {
-		this.advertisementId = advertisementId;
-		this.employerId = employerId;
-		this.creationDate = creationDate;
-		this.lastApplicationDate = lastApplicationDate;
-		this.advertisementTitle = advertisementTitle;
-		this.jobId = jobId;
-		this.cityId = cityId;
-		this.jobDescription = jobDescription;
-	}
+	@Column(name="min_salary")
+	private int minSalary;
 	
+	@Column(name="max_salary")
+	private int maxSalary;
+	
+	@ManyToOne()
+	@JoinColumn(name="city_id")
+	private City city;
+
+	
+
 	
 
 }

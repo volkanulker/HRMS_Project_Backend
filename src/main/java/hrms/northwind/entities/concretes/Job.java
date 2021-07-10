@@ -7,9 +7,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 @Entity
 @Table(name="Jobs")
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class Job {
 	@Id
@@ -19,13 +23,5 @@ public class Job {
 	@Column(name="role")
 	private String role;
 	
-	public Job() {
-		
-	}
-	
-	public Job(int jobId, String role) {
-		this.jobId = jobId;
-		this.role = role;
-	}
 
 }

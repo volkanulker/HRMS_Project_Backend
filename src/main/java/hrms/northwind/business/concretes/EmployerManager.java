@@ -66,6 +66,7 @@ public class EmployerManager implements EmployerService, EmailConfirmerService{
 			return new SuccessResult("All fields are filled");
 	}
 	
+	//TODO: USE GET BY FOR SEARCHING
 	public Result isEmployerAlreadyAdded(Employer employer) {
 		List<Employer> addedEmployers = this.employerDao.findAll();
 		String searchedEmail = employer.getEmail();

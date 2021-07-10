@@ -1,6 +1,11 @@
 package hrms.northwind.entities.concretes;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +17,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Verifications")
 @Inheritance(strategy=InheritanceType.JOINED)
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class Verification {
 	@Id
@@ -21,13 +28,6 @@ public class Verification {
 	
 	@Column(name="is_confirmed")
 	private boolean isConfirmed;
-	public Verification() {
-		
-	}
-	public Verification(int verificationId, boolean isConfirmed) {
-		this.verificationId = verificationId;
-		this.isConfirmed = isConfirmed;
-	}
-	
+
 
 }

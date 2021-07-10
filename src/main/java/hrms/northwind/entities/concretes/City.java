@@ -1,15 +1,22 @@
 package hrms.northwind.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Table(name="Cities")
+@Table(name="cities")
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class City {
 	@Id
@@ -20,10 +27,11 @@ public class City {
 	@Column(name="city_name")
 	private String cityName;
 	
-	public City(int cityId, String cityName) {
-		this.cityId = cityId;
-		this.cityName = cityName;
-	}
+	@OneToMany(mappedBy="city")
+	private List<JobAdvertisement> jobAdvertisements;
+	
+
+	
 	
 
 }

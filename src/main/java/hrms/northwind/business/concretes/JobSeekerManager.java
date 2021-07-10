@@ -80,7 +80,7 @@ public class JobSeekerManager implements JobSeekerService, MernisService,EmailCo
 			return new SuccessResult("All fields are filled.");
 	}
 
-
+	//TODO: USE GET BY FOR SEARCHING
 	public Result isJobSeekerAlreadyAdded(String ssn, String email) {
 		List<JobSeeker> jobSeekers = this.jobSeekerDao.findAll();
 		

@@ -7,10 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 @Entity // tell that is an entity
 @Table(name="Job_Seekers")
-@Data // lombok brings getters and setters
+@NoArgsConstructor
+@AllArgsConstructor
+@Data 
+@EqualsAndHashCode(callSuper = true)
 public class JobSeeker extends Person{
 	@GeneratedValue
 	@Column(name="id")
@@ -25,19 +31,7 @@ public class JobSeeker extends Person{
 	@Column(name="password")
 	private String password;
 	
-	public JobSeeker() {
-		
-	}
-	
-	public JobSeeker(int personId, String name, String surname, String email, int jobseekerId, String ssn, Date birth_date,
-			String password) {
-		super(personId, name, surname, email);
-		this.jobseekerId = jobseekerId;
-		this.ssn = ssn;
-		this.birth_date = birth_date;
-		this.password = password;
-	}
-	
+
 	
 	
 	

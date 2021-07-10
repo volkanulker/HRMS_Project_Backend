@@ -1,5 +1,7 @@
 package hrms.northwind.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -11,12 +13,16 @@ import javax.persistence.InheritanceType;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity // tell spring that this class  is an entity
 @Table(name = "Persons")// give table name of entity in DB
 @Inheritance(strategy=InheritanceType.JOINED)
+@AllArgsConstructor
+@NoArgsConstructor
 @Data // Connect lombok to the project
 public  class Person {
 	@Id // tell that this is primary key
@@ -32,14 +38,5 @@ public  class Person {
 	
 	@Column(name="email")
 	private String email;
-	public Person() {
-		
-	}
-	public Person(int id, String name, String surname, String email) {
-		this.personId = id;
-		this.name = name;
-		this.surname = surname;
-		this.email = email;
-	}
-	
+
 }

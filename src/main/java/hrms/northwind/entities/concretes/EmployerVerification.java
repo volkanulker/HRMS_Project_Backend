@@ -4,10 +4,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 @Entity
 @Table(name="Employer_Verifications")
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class EmployerVerification extends Verification{
 	
 	@GeneratedValue
@@ -17,16 +23,7 @@ public class EmployerVerification extends Verification{
 	@Column(name="employer_id")
 	private int employerId;
 	
-	public EmployerVerification() {
-		
-	}
-	
-	public EmployerVerification(int verificationId, boolean isConfirmed, int employerVerificationId, int employerId) {
-		super(verificationId, isConfirmed);
-		this.employerVerificationId = employerVerificationId;
-		this.employerId = employerId;
-	}
-	
+
 	
 
 }
