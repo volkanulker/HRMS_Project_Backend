@@ -43,10 +43,10 @@ public class EmployerManager implements EmployerService, EmailConfirmerService{
 	}
 	
 	public Result isEmployerValid(Employer employer,String repeatedPassword) {
-		String companyName = employer.getCompany_name(); 
+		String companyName = employer.getCompanyName(); 
 		String website = employer.getWebsite();
 		String email = employer.getEmail();
-		String phone = employer.getPhone_number();
+		String phone = employer.getPhoneNumber();
 		String password = employer.getPassword();
 		
 		Result isEmployerAlreadyAddedResult = isEmployerAlreadyAdded(employer);
@@ -69,6 +69,7 @@ public class EmployerManager implements EmployerService, EmailConfirmerService{
 	//TODO: USE GET BY FOR SEARCHING
 	public Result isEmployerAlreadyAdded(Employer employer) {
 		List<Employer> addedEmployers = this.employerDao.findAll();
+		
 		String searchedEmail = employer.getEmail();
 		String tempEmployerEmail;
 		for(Employer addedEmployer : addedEmployers) {

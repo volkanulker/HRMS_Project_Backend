@@ -1,9 +1,11 @@
 package hrms.northwind.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -23,16 +25,20 @@ public class Employer extends Person {
 	private int employerId;
 	
 	@Column(name="company_name")
-	private String company_name;
+	private String companyName;
 	
 	@Column(name="website")
 	private String website;
 	
 	@Column(name="phone_number")
-	private String phone_number;
+	private String phoneNumber;
 	
 	@Column(name="password")
 	private String password;
+	
+	
+	@OneToMany(mappedBy="employer")
+	private List<JobAdvertisement> jobAdvertisements;
 	
 
 	

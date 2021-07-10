@@ -55,7 +55,7 @@ public class JobSeekerManager implements JobSeekerService, MernisService,EmailCo
 		String name=jobSeeker.getName();
 		String surname=jobSeeker.getSurname(); 
 		String ssn = jobSeeker.getSsn();
-		Date birth_date = jobSeeker.getBirth_date();
+		Date birth_date = jobSeeker.getBirthDate();
 		String email = jobSeeker.getEmail();
 		String password = jobSeeker.getPassword();
 		

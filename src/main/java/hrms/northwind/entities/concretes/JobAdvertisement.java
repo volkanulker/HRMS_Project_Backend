@@ -24,24 +24,22 @@ public class JobAdvertisement{
 	@GeneratedValue
 	@Column(name="advertisement_id")
 	private int advertisementId;
-	@Column(name="employer_id")
-	private int employerId;
-	@Column(name="creation_date")
-	private Date creationDate;
-	@Column(name="last_application_date")
-	private Date lastApplicationDate;
+	
 	@Column(name="advertisement_title")
 	private String advertisementTitle;
-	@Column(name="job_id")
-	private int jobId;
-//	@Column(name="city_id")
-//	private int cityId;
+	
+	@ManyToOne()
+	@JoinColumn(name="employer_id")
+	private Employer employer;
+	
+	@ManyToOne()
+	@JoinColumn(name="job_id")
+	private Job job;
+	
 	@Column(name="job_description")
 	private String jobDescription;
-	
-	@Column(name="needed_employee_number")
-	private int neededEmployeeNumber;
-	
+
+
 	@Column(name="min_salary")
 	private int minSalary;
 	
@@ -51,6 +49,21 @@ public class JobAdvertisement{
 	@ManyToOne()
 	@JoinColumn(name="city_id")
 	private City city;
+	
+	@Column(name="creation_date")
+	private Date creationDate;
+	
+	@Column(name="last_application_date")
+	private Date lastApplicationDate;
+	
+
+	@Column(name="needed_employee_number")
+	private int neededEmployeeNumber;
+	
+	@Column(name="isActive")
+	private boolean isActive;
+
+	
 
 	
 
