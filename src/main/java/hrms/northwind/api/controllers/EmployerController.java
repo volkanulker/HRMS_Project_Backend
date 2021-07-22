@@ -18,10 +18,12 @@ import hrms.northwind.entities.concretes.Employer;
 @RequestMapping("/api/employers")
 public class EmployerController {
 	private EmployerService employerService;
+	
 	@Autowired
 	public EmployerController(EmployerService employerService) {
 		this.employerService = employerService;
 	}
+	
 	@GetMapping("/getall")
 	public DataResult<List<Employer>> getAll(){
 		return this.employerService.getAll();

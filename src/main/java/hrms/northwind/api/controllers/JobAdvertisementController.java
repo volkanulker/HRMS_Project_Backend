@@ -71,10 +71,7 @@ public class JobAdvertisementController {
 
     @PostMapping( "/setIsActiveTrue")
     public Result setIsactiveTrue(int id){
-        return this.jobAdvertisementService.setIsActiveTrue(id);
+        return this.jobAdvertisementService.setIsActiveTrue(id);  
     }
-	
-	
-	
 
 }

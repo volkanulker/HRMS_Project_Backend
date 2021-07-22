@@ -13,5 +13,8 @@ import hrms.northwind.entities.concretes.JobSeeker;
 public interface JobSeekerService {
 	DataResult<List<JobSeeker>> getAll();
 	Result add(JobSeeker jobSeeker);
+	
+	JobSeeker getByJobSeekerId(int id);
+	
 
 }

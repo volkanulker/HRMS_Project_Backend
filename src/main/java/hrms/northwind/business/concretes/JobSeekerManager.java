@@ -111,5 +111,12 @@ public class JobSeekerManager implements JobSeekerService, MernisService,EmailCo
 		return emailConfirmerService.isEmailConfirmed(email);
 	}
 
+
+	@Override
+	public JobSeeker getByJobSeekerId(int id) {
+		
+		return this.jobSeekerDao.getById(id);
+	}
+
 	
 }

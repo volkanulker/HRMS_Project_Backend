@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 
 import hrms.northwind.core.utilities.results.DataResult;
 import hrms.northwind.core.utilities.results.Result;
-import hrms.northwind.entities.concretes.Job;
+import hrms.northwind.entities.concretes.JobPosition;
 
 @Service
-public interface JobService {
-	 DataResult <List<Job>> getAll();
-	 Result add(Job job);
+public interface JobPositionService {
+	 DataResult <List<JobPosition>> getAll();
+	 Result add(JobPosition jobPosition);
 
 }

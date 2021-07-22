@@ -1,6 +1,5 @@
 package hrms.northwind.entities.concretes;
 
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,7 +19,6 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class JobSeekerVerification extends Verification{
-	
 	@GeneratedValue
 	@Column(name="js_verification_id")
 	private int jsVerificationId;

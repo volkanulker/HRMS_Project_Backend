@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -14,21 +15,24 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Entity
-@Table(name="jobs")
+@Table(name="job_positions")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Job {
+public class JobPosition {
 	@Id
 	@GeneratedValue
-	@Column(name="job_id")
-	private int jobId;
+	@Column(name="job_position_id")
+	private int jobPositionId;
 	
-	@Column(name="role")
-	private String role;
+	@Column(name="job_title")
+	private String jobTitle;
 	
-	@OneToMany(mappedBy="job")
+	@OneToMany(mappedBy="jobPosition")
 	private List<JobAdvertisement> jobAdvertisements;
+	
+	@OneToMany(mappedBy="jobPosition")
+	private List<JobExperience> jobExperiences;
 	
 
 }

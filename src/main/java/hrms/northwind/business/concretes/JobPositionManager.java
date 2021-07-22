@@ -5,39 +5,39 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import hrms.northwind.business.abstracts.JobService;
+import hrms.northwind.business.abstracts.JobPositionService;
 import hrms.northwind.core.utilities.results.DataResult;
 import hrms.northwind.core.utilities.results.Result;
 import hrms.northwind.core.utilities.results.SuccessDataResult;
 import hrms.northwind.core.utilities.results.SuccessResult;
-import hrms.northwind.dataAccess.abstracts.JobDao;
-import hrms.northwind.entities.concretes.Job;
+import hrms.northwind.dataAccess.abstracts.JobPositionDao;
+import hrms.northwind.entities.concretes.JobPosition;
 
 
 
 
 @Service
-public class JobManager implements JobService {
+public class JobPositionManager implements JobPositionService {
 	
-	private JobDao jobDao;
+	private JobPositionDao jobDao;
 	
 	
 	@Autowired
-	public JobManager(JobDao jobDao) {
+	public JobPositionManager(JobPositionDao jobDao) {
 		this.jobDao = jobDao;
 	}
 
 
 
 	@Override
-	public DataResult<List<Job>> getAll() {
-		return new SuccessDataResult<List<Job>>(this.jobDao.findAll(),"Jobs are listed.");
+	public DataResult<List<JobPosition>> getAll() {
+		return new SuccessDataResult<List<JobPosition>>(this.jobDao.findAll(),"Jobs are listed.");
 				
 	}
 
 
 	@Override
-	public Result add(Job job) {
+	public Result add(JobPosition job) {
 		//TODO: If job is already added, user is informed.
 		this.jobDao.save(job);
 		return new SuccessResult("Job is added.");

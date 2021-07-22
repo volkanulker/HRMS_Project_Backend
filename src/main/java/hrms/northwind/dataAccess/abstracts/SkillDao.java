@@ -1,10 +1,9 @@
 package hrms.northwind.dataAccess.abstracts;
 
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import hrms.northwind.entities.concretes.Job;
+import hrms.northwind.entities.concretes.Skill;
 
-public interface JobDao extends JpaRepository <Job,Integer> {
+public interface SkillDao extends JpaRepository<Skill,Integer>{
 
 }

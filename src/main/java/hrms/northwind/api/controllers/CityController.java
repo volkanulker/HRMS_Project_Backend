@@ -14,6 +14,7 @@ import hrms.northwind.entities.concretes.City;
 @RequestMapping("/api/cities")
 public class CityController {
 	private CityService cityService;
+	
 	@Autowired
 	public CityController(CityService cityService) {
 
