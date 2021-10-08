@@ -3,6 +3,7 @@
 - Multilayered Architecture is implemented.
 
 <---------------------------------------------------------------------------->
+
 Used Technologies:
 - Spring
 - PostgreSQL
