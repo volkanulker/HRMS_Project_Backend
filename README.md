@@ -1,3 +1,7 @@
-# HRMS Project Backend
+Backend of a Project about Human Resource Management Service.
+OOP and SOLID principles are implemented in that Backend structure.
+Multilayered Architecture is implemented.
 
-ER Diagram and sql file will be updated later.
+Used Technologies:
+- Spring
+- PostgreSQL
